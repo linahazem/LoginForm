@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Page Description">
+        <title>Welcome</title>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="signin.css" media="screen">
+        
+        <script>
+            function validateForm(){
+                var email = document.forms["myform"]["email"].value;
+                var password = document.forms["myform"]["password"].value;
+                if(email == ""){
+                    alert("Please enter something.");
+                    return false;
+                }
+                if(password == ""){
+                    alert("Please enter something.");
+                    return false;
+                }
+            }onsubmit="return validateForm()"
+        </script>
+    </head>
+    <body id= "b">
+        <h1>Login</h1>
+        <form name="myform" action="signin.php" method="post">
+            
+            <input type="email" id="email" name="email" placeholder="Email" required="required">
+            <br>
+            <input type="password" id="password" name="password" placeholder="Password" required="required">
+            <br>
+            <input type="submit" id="signup" value="Sign In">
+            
+        </form>
+        <form id="myform1" name="myform1" action="register.html" method="post">
+            <input type="submit" id="signup" value="Create a new account">
+        </form>
+        
+    </body>
+</html>

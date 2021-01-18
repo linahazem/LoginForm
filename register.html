@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Page Description">
+        <title>Register</title>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="signin.css" href="signin.css" media="screen">
+       
+        <script>
+            function validateForm(){
+                var name = document.forms["myform"]["name"].value;
+                var email = document.forms["myform"]["email"].value;
+                var password = document.forms["myform"]["password"].value;
+                var confirmPassword = document.forms["myform"]["confirmPassword"].value;
+                var atposition = email.indexOf("@");  
+                var dotposition = email.lastIndexOf(".");
+                if( name == "" ){
+                    alert("Please enter your name.");
+                    return false;
+                }
+                if (atposition<1 || dotposition<atposition+2 || dotposition+2>=email.length){
+                    if( email == "" ){
+                        alert("Please enter your email.");
+                        return false;
+                    }
+                    alert("Please enter valid email.");
+                    return(false);
+                }
+                if( password == "" ){
+                    alert("Please enter your password.");
+                    return false;
+                }
+                if( confirmPassword == "" ){
+                    alert("Please confirm your password.");
+                    return false;
+                }
+                if(password != confirmPassword){
+                    alert("Your confirmed password isn't the same password.");
+                    return false;
+                }
+            }
+        </script>
+        
+    </head>
+    <body>
+        <h1 id="account">Create Your </h1>
+        <h1 id="account1"> New Account</h1>
+        <form name="myform" action="register.php" onsubmit="return validateForm()" method="post">
+            
+            <input type="text" id="name" name="name" placeholder="Name" required="required">
+            <input type="email" id="email" name="email" placeholder="Email" required="required">
+            <input type="password" id="password" name="password" placeholder="Password" required="required">
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required="required">
+            <input type="submit" id="done" value="Sign Up">
+        </form>    
+        
+    </body>
+</html>

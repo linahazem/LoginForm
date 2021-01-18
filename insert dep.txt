@@ -1,0 +1,5 @@
+INSERT INTO department (name,description) 
+VALUES ('history','taught by ahmed') 
+ ,('english','taught by mona')
+ , ('science','taught by mahy')
+ ,('french','taught by menna');
